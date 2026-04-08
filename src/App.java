@@ -1,3 +1,6 @@
+import model.Coche;
+import model.Moto;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,9 +41,9 @@ public class App {
                     break;
                 case 4:
                     for (Coche c : coches)
-                        System.out.println("Coche " + c.marca + " " + c.velocidad);
+                        System.out.println(c);
                     for (Moto m : motos)
-                        System.out.println("Moto " + m.marca + " " + m.velocidad);
+                        System.out.println(m);
                     break;
             }
 
