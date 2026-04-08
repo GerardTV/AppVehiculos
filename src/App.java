@@ -1,13 +1,14 @@
 import model.Coche;
 import model.Moto;
+import model.Vehiculo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
-    static ArrayList<Coche> coches = new ArrayList<>();
-    static ArrayList<Moto> motos = new ArrayList<>();
+
+    static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
     public static void main(String[] args) {
         addTestData();
         Scanner sc = new Scanner(System.in);
@@ -27,23 +28,21 @@ public class App {
                     sc.nextLine(); // limpiar buffer
                     System.out.print("Introduce la marca del coche: ");
                     String marcaCoche = sc.nextLine();
-                    coches.add(new Coche(marcaCoche));
+                    vehiculos.add(new Coche(marcaCoche));
                     break;
                 case 2:
                     sc.nextLine(); // limpiar buffer
                     System.out.print("Introduce la marca de la moto: ");
                     String marcaMoto = sc.nextLine();
-                    motos.add(new Moto(marcaMoto));
+                    vehiculos.add(new Moto(marcaMoto));
                     break;
                 case 3:
-                    for (Coche c : coches) c.acelerar();
-                    for (Moto m : motos) m.acelerar();
+
+                    for (Vehiculo v : vehiculos) v.acelerar();
                     break;
                 case 4:
-                    for (Coche c : coches)
-                        System.out.println(c);
-                    for (Moto m : motos)
-                        System.out.println(m);
+                    for (Vehiculo v : vehiculos)
+                        System.out.println(v);
                     break;
             }
 
@@ -52,13 +51,13 @@ public class App {
 
     public static void addTestData() {
         // Añadimos coches
-        coches.add(new Coche("Toyota"));
-        coches.add(new Coche("Honda"));
-        coches.add(new Coche("Ford"));
+        vehiculos.add(new Coche("Toyota"));
+        vehiculos.add(new Coche("Honda"));
+        vehiculos.add(new Coche("Ford"));
 
         // Añadimos motos
-        motos.add(new Moto("Yamaha"));
-        motos.add(new Moto("Kawasaki"));
-        motos.add(new Moto("Ducati"));
+        vehiculos.add(new Moto("Yamaha"));
+        vehiculos.add(new Moto("Kawasaki"));
+        vehiculos.add(new Moto("Ducati"));
     }
 }
