@@ -1,6 +1,6 @@
 package model;
 
-public abstract class   Vehiculo {
+public abstract class Vehiculo implements Comparable<Vehiculo> {
     private String marca;
     protected int velocidad;
 
@@ -16,5 +16,10 @@ public abstract class   Vehiculo {
         return
                 "marca='" + marca + '\'' +
                 ", velocidad=" + velocidad;
+    }
+
+    @Override
+    public int compareTo(Vehiculo o) {
+        return this.marca.compareTo(o.marca);
     }
 }

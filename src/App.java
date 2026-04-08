@@ -3,6 +3,8 @@ import model.Moto;
 import model.Vehiculo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class App {
@@ -41,6 +43,7 @@ public class App {
                     for (Vehiculo v : vehiculos) v.acelerar();
                     break;
                 case 4:
+                    Collections.sort(vehiculos);
                     for (Vehiculo v : vehiculos)
                         System.out.println(v);
                     break;
