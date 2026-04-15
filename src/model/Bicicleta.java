@@ -1,7 +1,7 @@
 package model;
 
 public class Bicicleta extends Vehiculo{
-    public Bicicleta(String marca) {
+    public Bicicleta(String marca) throws MarcaInvalidaException {
         super(marca);
     }
 

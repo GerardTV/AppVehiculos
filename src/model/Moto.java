@@ -3,7 +3,7 @@ package model;
 public class Moto extends Vehiculo {
 
 
-    public Moto(String marca) {
+    public Moto(String marca) throws MarcaInvalidaException {
         super(marca);
 
     }
