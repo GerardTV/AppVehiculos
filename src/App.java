@@ -8,7 +8,7 @@ import java.util.*;
 public class App {
 
 
-    static Set<Vehiculo> vehiculos = new HashSet<>();
+    static Set<Vehiculo> vehiculos = new TreeSet<>();
     public static void main(String[] args) {
         addTestData();
         Scanner sc = new Scanner(System.in);
@@ -69,6 +69,7 @@ public class App {
             vehiculos.add(new Coche("Ford"));
 
             // Añadimos motos
+            vehiculos.add(new Moto("Toyota"));
             vehiculos.add(new Moto("Yamaha"));
             vehiculos.add(new Moto("Kawasaki"));
             vehiculos.add(new Moto("Ducati"));

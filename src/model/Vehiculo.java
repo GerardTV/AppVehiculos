@@ -5,6 +5,8 @@ import java.util.Objects;
 public abstract class Vehiculo implements Comparable<Vehiculo> {
     private String marca;
     protected int velocidad;
+    private int id;
+    private static int cont = 0;
 
     public Vehiculo(String marca) throws MarcaInvalidaException {
         if (marca == null || marca.isEmpty()){
@@ -12,6 +14,8 @@ public abstract class Vehiculo implements Comparable<Vehiculo> {
         }
         this.marca = marca;
         this.velocidad = 0;
+        this.id = cont;
+        cont++;
     }
 
     public abstract void acelerar();
@@ -25,14 +29,18 @@ public abstract class Vehiculo implements Comparable<Vehiculo> {
 
     @Override
     public int compareTo(Vehiculo o) {
-        return this.marca.compareTo(o.marca);
+        int result = this.marca.compareTo(o.marca);
+        if (result == 0){
+            return Integer.compare(this.id,o.id);
+        }
+        return result;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Vehiculo vehiculo = (Vehiculo) o;
-        return velocidad == vehiculo.velocidad && Objects.equals(marca, vehiculo.marca);
+        return this.id == vehiculo.id && Objects.equals(marca, vehiculo.marca);
     }
 
     @Override
