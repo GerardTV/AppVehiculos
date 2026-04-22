@@ -1,3 +1,5 @@
+import dao.VehiculoDAO;
+import dao.VehiculoDAOFile;
 import model.Coche;
 import model.MarcaInvalidaException;
 import model.Moto;
@@ -10,8 +12,11 @@ public class App {
 
     static Set<Vehiculo> vehiculos = new TreeSet<>();
     public static void main(String[] args) {
-        addTestData();
+        //addTestData();
+        VehiculoDAO dao = new VehiculoDAOFile();
+        vehiculos  = dao.getVehiculos();
         Scanner sc = new Scanner(System.in);
+
         int opcion = -1;
 
         do {
@@ -56,6 +61,8 @@ public class App {
                     for (Vehiculo v : vehiculos)
                         System.out.println(v);
                     break;
+                case 0:
+                    dao.guardar((TreeSet)vehiculos);
             }
 
         } while (opcion != 0);

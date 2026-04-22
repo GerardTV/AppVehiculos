@@ -18,6 +18,22 @@ public abstract class Vehiculo implements Comparable<Vehiculo> {
         cont++;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public static int getCont() {
+        return cont;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
     public abstract void acelerar();
 
     @Override
