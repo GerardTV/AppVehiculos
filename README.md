@@ -89,6 +89,58 @@ Se modela la realidad simplificando los elementos clave.
 
 ---
 
+
+## 🧱 Estructuras de datos utilizadas
+
+- `Set` para evitar duplicados.
+- `TreeSet` para mantener ordenación y coherencia en los datos.
+- Identificador único (`id`) para distinguir correctamente cada vehículo.
+
+---
+
+## 🏗️ Patrones de diseño
+
+En la aplicación se han aplicado distintos patrones de diseño para mejorar la estructura y mantenibilidad del código:
+
+### 📦 DAO (Data Access Object)
+- Separación de la lógica de acceso a datos.
+- Encapsula las operaciones de persistencia (ficheros y base de datos).
+- Permite desacoplar la lógica de negocio del almacenamiento.
+
+### 🔁 Singleton
+- Garantiza una única instancia de los gestores principales (por ejemplo, acceso a base de datos o repositorios).
+- Control centralizado de recursos compartidos.
+
+### 🏭 Factory
+- Encargado de la creación de objetos relacionados con vehículos o persistencia.
+- Centraliza la instanciación de clases para mejorar flexibilidad y escalabilidad.
+
+---
+
+## 💾 Persistencia de datos
+
+La aplicación soporta diferentes formas de persistencia:
+
+### 📄 Ficheros CSV
+- Lectura y escritura de datos en formato CSV.
+- Permite guardar y recuperar vehículos de forma sencilla.
+
+### 🗄️ Base de datos (JDBC)
+- Conexión a base de datos relacional mediante JDBC.
+- Creación y gestión de la tabla `Vehiculo`.
+- Corrección de problemas de conexión durante el desarrollo.
+
+---
+
+## ☕ Programación funcional (Streams)
+
+Se ha incorporado el uso de **Streams de Java** para el tratamiento de colecciones:
+
+- Filtrado de vehículos con `filter`.
+- Sustitución de bucles tradicionales por un enfoque más declarativo.
+- Mejora de legibilidad y mantenimiento del código.
+
+
 ## ▶️ Ejecución del proyecto
 
 1. Clonar el repositorio:
