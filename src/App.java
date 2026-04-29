@@ -1,5 +1,4 @@
-import dao.VehiculoDAO;
-import dao.VehiculoDAOFile;
+import dao.*;
 import model.Coche;
 import model.MarcaInvalidaException;
 import model.Moto;
@@ -13,7 +12,7 @@ public class App {
     static Set<Vehiculo> vehiculos = new TreeSet<>();
     public static void main(String[] args) {
         //addTestData();
-        VehiculoDAO dao = new VehiculoDAOFile();
+        VehiculoDAO dao = DAOFactory.getVehiculoDAO(TipoPersistencia.BBDD);
         vehiculos  = dao.getVehiculos();
         Scanner sc = new Scanner(System.in);
 
@@ -54,12 +53,18 @@ public class App {
                     break;
                 case 3:
 
-                    for (Vehiculo v : vehiculos) v.acelerar();
+                    //for (Vehiculo v : vehiculos) v.acelerar();
+                    vehiculos.forEach(Vehiculo::acelerar);
                     break;
                 case 4:
                     //Collections.sort(vehiculos);
                     for (Vehiculo v : vehiculos)
                         System.out.println(v);
+                    long coches = vehiculos.stream().filter(v -> v instanceof Coche).count();
+                    long motos = vehiculos.stream().filter(v -> v instanceof Moto).count();
+
+                    System.out.println("Coches: " + coches);
+                    System.out.println("Motos: " + motos);
                     break;
                 case 0:
                     dao.guardar((TreeSet)vehiculos);
@@ -80,6 +85,8 @@ public class App {
             vehiculos.add(new Moto("Yamaha"));
             vehiculos.add(new Moto("Kawasaki"));
             vehiculos.add(new Moto("Ducati"));
+
+
         } catch (MarcaInvalidaException e) {
             System.out.println(e.getMessage());
         }

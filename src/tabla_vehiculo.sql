@@ -1,0 +1,5 @@
+CREATE TABLE vehiculo
+( id INT AUTO_INCREMENT PRIMARY KEY,
+  marca VARCHAR(100) NOT NULL,
+  velocidad INT NOT NULL,
+  tipo ENUM('COCHE', 'MOTO') NOT NULL );
