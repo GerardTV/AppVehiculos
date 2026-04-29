@@ -18,7 +18,8 @@ Este proyecto está pensado para trabajar:
 * Herencia
 * Polimorfismo
 * Abstracción
-* Buenas prácticas de diseño
+* Buenas prácticas de diseño, patrones
+* Persistencia de datos
 
 ---
 
@@ -33,6 +34,9 @@ El proyecto está construido de forma incremental. Se recomienda:
 3. Evolución del modelo
 4. Refactorización del código
 5. Aplicación de conceptos avanzados de POO
+6. Estructuras de datos
+7. Persistencia en ficheros
+8. Persistencia en BBDD
 
 💡 La idea es que el alumno vea **cómo crece un proyecto real**, no solo el resultado final.
 
